@@ -1,0 +1,165 @@
+<div class="wrapper">
+<% if @page.images.any? %>
+<div class="carousel-wrapper">
+  <div class="carousel">
+  <div class="container">
+  <div class="row">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <% i=0 %>
+    <% while i < @page.images.size do %>
+    <li data-target="#carousel-example-generic" data-slide-to="<%= i %>" class=<%= "active" if i==0 %>></li>
+    <% i+=1 %>
+    <% end %>
+  </ol>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+<% @page.images.each do |image| %>
+    <div class="item<%= cycle(' active', '', '') %>">
+      <img src="<%= image.thumbnail(geometry: "900x400").url %>">
+    <div class="carousel-caption">
+        <h2><%= image.id %></h2>
+      </div>
+    </div>
+<% end %>
+  </div> <!-- end carosel indicator -->
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+
+  </div> <!-- row carosel -->
+</div> <!-- end container carousel -->
+</div> <!-- carousel wrapper -->
+</div>
+<% end %>
+<!-- END OF CAROUSEL -->
+<section>
+  <div class="container p-light-blue">
+    <div class="row">
+      <div class="quotation-wraper custom-padding">
+        <h2>Quotation of the Day</h2>
+      <blockquote>
+        <dl>
+          <dt>Khudi ko kar buland</dt>
+          <dd>Iqbal said khudi ko buland karna zaroi hai</dd>
+        </dl>
+        <cite class="pull-right"><small>Abdul Matin Shah</small></cite><br>
+        <a href="" class="btn btn-primary pull-right">Read More</a>
+      </blockquote>
+      
+      </div>
+    </div>
+  </div>
+  <!-- END OF QUOTATION -->
+<section>
+  <div class="ctas">
+    <div class="container p-light-blue">
+    <div class="row">
+      <div class="cta col-sm-6">
+        <div class="cta-inner">
+          <h2>Books</h2>
+          <ul>
+            <li>Geat Collection</li>
+            <li>Health Boosta</li>
+            <li>Item 3</li>
+            <a href="#" class="btn btn-primary btn-xs">Read more &hellip;</a>
+          </ul>
+      </div> <!-- cta-inner -->
+        </div>
+      <div class="cta col-sm-6">
+         <div class="cta-inner">
+          <h2>Equipment</h2>
+          <ul>
+            <li>Women Hanger</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <a href="#" class="btn btn-primary btn-xs">Read more &hellip;</a>
+          </ul>
+        </div> <!-- cta-inner -->
+      </div>
+    
+      <div class="cta col-sm-6">
+         <div class="cta-inner">
+          <h2>Vitamins</h2>
+          <ul>
+            <li>Febrosischetosis</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <a href="#" class="btn btn-primary btn-xs">Read more &hellip;</a>
+          </ul>
+        </div> <!-- cta-inner -->
+      </div>
+      <div class="cta col-sm-6">
+         <div class="cta-inner">
+          <h2>Food</h2>
+          <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+           <a href="#" class="btn btn-primary btn-xs">Read more &hellip;</a>
+          </ul>
+        </div> <!-- cta-inner -->
+      </div>
+    </div> <!-- row -->
+    </div> <!-- end container -->
+</div>
+  <!-- END OF CTA -->
+  <article>
+    <div class="container p-light-blue">
+    <div class="row">
+            <div id="main" class="custom-padding">
+              <%=  raw @page.content_for(:body) %>
+            </div>
+    </div>
+    <!-- END OF BODY -->
+</article>
+
+
+  <div class="container p-black">
+    <div class="row">
+      <div class="blog-section">
+      <div class="blog-left col-sm-3">
+        <h2>About the Author</h2>
+        <h3>Dr. Khurshid Anwar</h3>
+        <img src="http://placehold.it/150x150" class="img-circle img-responsive img-thumbnail">
+        <p>He is an MBBS doctor    having     vast     experience (>25 years) of   Community   Health, Surveillance    of     EPI  target   diseases    and     Family Health. He   also supervised     Malaria       control   programme  in  UNHCR funded project of  a  Refugee   Camp   in  Pakistan.  His   online activities include Bloging on Health related issues and   participation    in       'Yahoo   answars'.</p>
+      </div> <!-- end author bio -->
+      
+      <div class="blog-right col-sm-9">
+        <h2>Latest Articles from Your Doctor</h2>
+
+        <div class="blog-entry clearfix">
+          <a href="#"><h3>Blog title 1</h3></a>
+          <img src="http://placehold.it/100x100" class="img-circle img-responsive">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, voluptates eveniet ut nisi iusto. Alias, quos iure ut sunt inventore. Dolorum, incidunt, repellat, doloribus, aspernatur excepturi cupiditate molestiae labore cum iusto autem ab debitis nam <a href="#" class="btn btn-primary btn-xs pull-right">Read more &hellip;</a></p>
+        </div> <!-- end of except -->
+
+        <div class="blog-entry clearfix">
+           <a href="#"><h3>Blog title 2</h3></a>
+          <img src="http://placehold.it/100x100" class="img-circle img-responsive">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, voluptates eveniet ut nisi iusto. Alias, quos iure ut sunt inventore. Dolorum, incidunt, repellat, doloribus, aspernatur excepturi cupiditate molestiae labore cum iusto autem ab debitis nam . <a href="#" class="btn btn-primary btn-xs pull-right">Read more &hellip;</a></p>
+        </div> <!-- end of except -->
+
+        <div class="blog-entry clearfix">
+          <a href="#"><h3>Blog title 3</h3></a>
+          <img src="http://placehold.it/100x100" class="img-circle img-responsive">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, voluptates eveniet ut nisi iusto. Alias, quos iure ut sunt inventore. Dolorum, incidunt, repellat, doloribus, aspernatur excepturi cupiditate molestiae labore cum iusto autem ab debitis nam . <a href="#" class="btn btn-primary btn-xs pull-right">Read more &hellip;</a></p>
+        </div> <!-- end of except -->
+
+      </div> <!-- end author bio -->
+      </div> <!-- end of blog-excerpts -->
+    </div> <!-- end of row -->
+  </div> <!-- end of cotainer -->
+
+<!-- END OF BLOG-EXCERPTS -->
+
+</section>
+
+</div> <!-- wrapper -->

@@ -1,0 +1,16 @@
+<div class="header-wrapper">
+<div class="container">
+  <div class="row">
+
+    <%= Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self).to_html %>
+     
+  <section id='logo'>
+    <h1<%= " class=display-logo" if @page.id==1 %>>
+    <%= link_to Refinery::Core.site_name, refinery.root_path %>
+  </h1>
+  <h2 id="slogan"><span class="left">Be Happy</span> <span class="right">Live Long!</span></h2>
+  </section>
+k
+   </div>  <!--row --> 
+</div> <!--container -->
+</div> <!-- header-wrapper -->

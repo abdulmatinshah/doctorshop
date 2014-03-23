@@ -10,6 +10,7 @@ Refinery::Blog.configure do |config|
   # config.share_this_key = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 
   # config.page_url = "/blog"
+  config.page_url = "/articles"
   
   # If you're grafting onto an existing app, change this to your User class
   # Refinery::Blog.user_class = "Refinery::User"
