@@ -1,7 +1,7 @@
 <div class="wrapper">
 <% if @page.images.any? %>
 <div class="carousel-wrapper">
-  <div class="carousel">
+  <div class="carousel-2">
   <div class="container">
   <div class="row">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -16,14 +16,15 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
 <% @page.images.each do |image| %>
-    <div class="item<%= cycle(' active', '', '') %>">
+    <div class="item<%= ' active' if image.id==1 %>">
       <img src="<%= image.thumbnail(geometry: "900x400").url %>">
-    <div class="carousel-caption">
-        <h2><%= image.id %></h2>
-      </div>
-    </div>
+       <div class="carousel-caption">
+        <!-- <h2><%#= image.id %></h2> -->
+        
+      </div>  <!-- carousel-caption -->
+    </div> <!-- item active -->
 <% end %>
-  </div> <!-- end carosel indicator -->
+</div> <!-- carousel-inner -->
 
   <!-- Controls -->
   <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -32,13 +33,13 @@
   <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
-</div>
+</div> <!-- carousel-example-generic -->
 
   </div> <!-- row carosel -->
 </div> <!-- end container carousel -->
 </div> <!-- carousel wrapper -->
 </div>
-<% end %>
+<% end %> <!-- end of @page.images.any?  -->
 <!-- END OF CAROUSEL -->
 <section>
   <div class="container p-light-blue">
@@ -66,8 +67,8 @@
         <div class="cta-inner">
           <h2>Books</h2>
           <ul>
-            <li>Geat Collection</li>
-            <li>Health Boosta</li>
+            <li>Great Collection</li>
+            <li>Health Boostor</li>
             <li>Item 3</li>
             <a href="#" class="btn btn-primary btn-xs">Read more &hellip;</a>
           </ul>

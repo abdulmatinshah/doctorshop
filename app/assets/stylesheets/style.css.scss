@@ -177,9 +177,9 @@ h2#slogan {
     }
   }
 }
- #body_content_title {
+/* #body_content_title {
   margin: 0 17px;
- }
+ }*/
 #page, #contact-page {
   margin-top: -.5em;
 }
@@ -321,4 +321,9 @@ form {
 }
 #body_content {
   margin-left: 0px;
+}
+#about-page #page.container,
+#contact-page #page.container,
+#articles-page #page.container {
+  padding: 0 17px;
 }
