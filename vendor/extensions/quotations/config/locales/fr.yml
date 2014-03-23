@@ -1,0 +1,28 @@
+fr:
+  refinery:
+    plugins:
+      quotations:
+        title: Quotations
+    quotations:
+      admin:
+        quotations:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Quotation
+            reorder: Réordonner les Quotations
+            reorder_done: Fin de réordonnancement des Quotations
+          records:
+            title: Quotations
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Quotation. Cliquer sur "Créer un(e) nouve(au/l/lle) Quotation" pour créer votre premi(er/ère) quotation.'
+          quotation:
+            view_live_html: Voir ce(t/tte) quotation <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) quotation
+            delete: Supprimer définitivement ce(t/tte) quotation
+      quotations:
+        show:
+          other: Autres Quotations
+  activerecord:
+    attributes:
+      'refinery/quotations/quotation':
+        name: Name
+        quote: Quote

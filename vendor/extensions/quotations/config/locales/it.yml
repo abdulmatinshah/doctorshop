@@ -1,0 +1,28 @@
+it:
+  refinery:
+    plugins:
+      quotations:
+        title: Quotations
+    quotations:
+      admin:
+        quotations:
+          actions:
+            create_new: Aggiungi Nuovo Quotation
+            reorder: Riordina Quotations
+            reorder_done: Termina il Riordino di Quotations
+          records:
+            title: Quotations
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Quotations. Clicca "Aggiungi Nuovo Quotation" per aggiungere il tuo primo quotation.
+          quotation:
+            view_live_html: Guarda live questo quotation <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo quotation
+            delete: Rimuovi per sempre questo quotation
+      quotations:
+        show:
+          other: Altri Quotations
+  activerecord:
+    attributes:
+      'refinery/quotations/quotation':
+        name: Name
+        quote: Quote

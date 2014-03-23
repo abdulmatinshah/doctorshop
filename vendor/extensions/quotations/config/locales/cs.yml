@@ -1,0 +1,28 @@
+cs:
+  refinery:
+    plugins:
+      quotations:
+        title: Quotations
+    quotations:
+      admin:
+        quotations:
+          actions:
+            create_new: Přidat Quotation
+            reorder: Řadit Quotations
+            reorder_done: Konec řazení Quotations
+          records:
+            title: Quotations
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Quotations. Zvolte "Přidat Quotation" pro přidání prvního quotation.
+          quotation:
+            view_live_html: Zobrazit náhled quotation<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit quotation
+            delete: Smazat quotation
+      quotations:
+        show:
+          other: Další Quotations
+  activerecord:
+    attributes:
+      'refinery/quotations/quotation':
+        name: Name
+        quote: Quote

@@ -1,0 +1,30 @@
+<%= form_for [refinery, :quotations_admin, @quotation] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @quotation,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+                :f => f,
+                :fields => [:quote],
+                :object => "quotations/quotation" -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.quotations.admin.quotations.quotation'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @quotation.name) -%>
+<% end -%>
+
+<% content_for :javascripts do -%>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end -%>

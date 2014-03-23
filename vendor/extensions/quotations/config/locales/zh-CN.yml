@@ -1,0 +1,30 @@
+zh-CN:
+  refinery:
+    plugins:
+      quotations:
+        title: Quotations
+    quotations:
+      admin:
+        quotations:
+          actions:
+            create_new: 建立新的 Quotation
+            reorder: 对 Quotations 重新排序
+            reorder_done: 对 Quotations 的重新排序结束
+          records:
+            title: Quotations
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Quotations yet. Click "Add New Quotation" to add your first quotation.
+            no_items_yet: 目前没有 Quotations . 点击 "Add New Quotation" 创建一个quotation.
+          quotation:
+            view_live_html: 查看 quotation 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 quotation
+            delete: 永久删除 quotation
+      quotations:
+        show:
+          other: 其他 Quotations
+  activerecord:
+    attributes:
+      'refinery/quotations/quotation':
+        name: Name
+        quote: Quote

@@ -1,0 +1,28 @@
+nb:
+  refinery:
+    plugins:
+      quotations:
+        title: Quotations
+    quotations:
+      admin:
+        quotations:
+          actions:
+            create_new: Lag en ny Quotation
+            reorder: Endre rekkefølgen på Quotations
+            reorder_done: Ferdig å endre rekkefølgen Quotations
+          records:
+            title: Quotations
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Quotations enda. Klikk på "Lag en ny Quotation" for å legge til din første quotation.
+          quotation:
+            view_live_html: Vis hvordan denne quotation ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne quotation
+            delete: Fjern denne quotation permanent
+      quotations:
+        show:
+          other: Andre Quotations
+  activerecord:
+    attributes:
+      'refinery/quotations/quotation':
+        name: Name
+        quote: Quote

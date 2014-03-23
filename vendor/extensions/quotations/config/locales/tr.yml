@@ -1,0 +1,28 @@
+tr:
+  refinery:
+    plugins:
+      quotations:
+        title: Quotations
+    quotations:
+      admin:
+        quotations:
+          actions:
+            create_new: Yeni Ekle Quotation
+            reorder: Tekrar sirala Quotations
+            reorder_done: Tekrar siralama tamamlandiQuotations
+          records:
+            title: Quotations
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Quotations yok henuz.  Tikla "Yeni Ekle Quotation" eklemek senin ilk quotation.
+          quotation:
+            view_live_html: Bunu canlu quotation goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle quotation
+            delete: Bunu Sil quotation sonsuza dek
+      quotations:
+        show:
+          other: Diger Quotations
+  activerecord:
+    attributes:
+      'refinery/quotations/quotation':
+        name: Name
+        quote: Quote

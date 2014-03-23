@@ -1,0 +1,29 @@
+es:
+  refinery:
+    plugins:
+      quotations:
+        title: Quotations
+#        article: masculino/femenino
+    quotations:
+      admin:
+        quotations:
+          actions:
+            create_new: Crear nuevo quotation
+            reorder: Reordenar quotations
+            reorder_done: Reordenación de quotations completada
+          records:
+            title: Quotations
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay quotations todavía. Pulsa en "Crear nuevo Quotation" para crear tu primer quotation.
+          quotation:
+            view_live_html: Ver este quotation como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este quotation
+            delete: Borrar este quotation para siempre
+      quotations:
+        show:
+          other: Otros quotations
+  activerecord:
+    attributes:
+      'refinery/quotations/quotation':
+        name: Name
+        quote: Quote
