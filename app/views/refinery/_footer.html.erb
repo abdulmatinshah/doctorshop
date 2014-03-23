@@ -1,0 +1,8 @@
+<div class="container p-black">
+  <div class="row">
+    <p>
+  <%= raw t('.copyright', :year => Time.now.year,
+                      :site_name => link_to(Refinery::Core.site_name, refinery.root_path)) %>
+</p>
+  </div>
+</div>
