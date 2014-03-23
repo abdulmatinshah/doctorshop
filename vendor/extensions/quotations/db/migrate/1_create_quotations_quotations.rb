@@ -2,6 +2,7 @@ class CreateQuotationsQuotations < ActiveRecord::Migration
 
   def up
     create_table :refinery_quotations do |t|
+      t.string :title
       t.string :name
       t.text :quote
       t.integer :position

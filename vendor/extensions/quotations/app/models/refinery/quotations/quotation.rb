@@ -3,9 +3,9 @@ module Refinery
     class Quotation < Refinery::Core::BaseModel
       self.table_name = 'refinery_quotations'
 
-      attr_accessible :name, :quote, :position
+      attr_accessible :title, :name, :quote, :position
 
-      validates :name, :presence => true, :uniqueness => true
+      validates :title, :presence => true, :uniqueness => true
     end
   end
 end

@@ -6,12 +6,12 @@ module Refinery
       describe "validations" do
         subject do
           FactoryGirl.create(:quotation,
-          :name => "Refinery CMS")
+          :title => "Refinery CMS")
         end
 
         it { should be_valid }
         its(:errors) { should be_empty }
-        its(:name) { should == "Refinery CMS" }
+        its(:title) { should == "Refinery CMS" }
       end
     end
   end

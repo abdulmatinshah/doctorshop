@@ -50,4 +50,5 @@ gem 'refinerycms', '~> 2.1.0'
  gem 'refinerycms-search', '~> 2.1.0'
  gem 'refinerycms-page-images', '~> 2.1.0'
 
+
 gem 'refinerycms-quotations', :path => 'vendor/extensions'

@@ -4,8 +4,13 @@
               :include_object_name => true %>
 
   <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
     <%= f.label :name -%>
-    <%= f.text_field :name, :class => 'larger widest' -%>
+    <%= f.text_field :name -%>
   </div>
 
   <div class='field'>
@@ -18,7 +23,7 @@
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,
              :delete_title => t('delete', :scope => 'refinery.quotations.admin.quotations.quotation'),
-             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @quotation.name) -%>
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @quotation.title) -%>
 <% end -%>
 
 <% content_for :javascripts do -%>

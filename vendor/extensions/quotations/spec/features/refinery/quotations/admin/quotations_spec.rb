@@ -9,8 +9,8 @@ describe Refinery do
 
         describe "quotations list" do
           before do
-            FactoryGirl.create(:quotation, :name => "UniqueTitleOne")
-            FactoryGirl.create(:quotation, :name => "UniqueTitleTwo")
+            FactoryGirl.create(:quotation, :title => "UniqueTitleOne")
+            FactoryGirl.create(:quotation, :title => "UniqueTitleTwo")
           end
 
           it "shows two items" do
@@ -29,7 +29,7 @@ describe Refinery do
 
           context "valid data" do
             it "should succeed" do
-              fill_in "Name", :with => "This is a test of the first string field"
+              fill_in "Title", :with => "This is a test of the first string field"
               click_button "Save"
 
               page.should have_content("'This is a test of the first string field' was successfully added.")
@@ -41,20 +41,20 @@ describe Refinery do
             it "should fail" do
               click_button "Save"
 
-              page.should have_content("Name can't be blank")
+              page.should have_content("Title can't be blank")
               Refinery::Quotations::Quotation.count.should == 0
             end
           end
 
           context "duplicate" do
-            before { FactoryGirl.create(:quotation, :name => "UniqueTitle") }
+            before { FactoryGirl.create(:quotation, :title => "UniqueTitle") }
 
             it "should fail" do
               visit refinery.quotations_admin_quotations_path
 
               click_link "Add New Quotation"
 
-              fill_in "Name", :with => "UniqueTitle"
+              fill_in "Title", :with => "UniqueTitle"
               click_button "Save"
 
               page.should have_content("There were problems")
@@ -65,7 +65,7 @@ describe Refinery do
         end
 
         describe "edit" do
-          before { FactoryGirl.create(:quotation, :name => "A name") }
+          before { FactoryGirl.create(:quotation, :title => "A title") }
 
           it "should succeed" do
             visit refinery.quotations_admin_quotations_path
@@ -74,16 +74,16 @@ describe Refinery do
               click_link "Edit this quotation"
             end
 
-            fill_in "Name", :with => "A different name"
+            fill_in "Title", :with => "A different title"
             click_button "Save"
 
-            page.should have_content("'A different name' was successfully updated.")
-            page.should have_no_content("A name")
+            page.should have_content("'A different title' was successfully updated.")
+            page.should have_no_content("A title")
           end
         end
 
         describe "destroy" do
-          before { FactoryGirl.create(:quotation, :name => "UniqueTitleOne") }
+          before { FactoryGirl.create(:quotation, :title => "UniqueTitleOne") }
 
           it "should succeed" do
             visit refinery.quotations_admin_quotations_path

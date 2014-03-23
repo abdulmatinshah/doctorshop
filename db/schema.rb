@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140323135838) do
+ActiveRecord::Schema.define(:version => 20140323160649) do
 
   create_table "_refinery_quotations_old_20140323", :force => true do |t|
     t.string   "name"
@@ -207,6 +207,7 @@ ActiveRecord::Schema.define(:version => 20140323135838) do
   add_index "refinery_pages", ["rgt"], :name => "index_refinery_pages_on_rgt"
 
   create_table "refinery_quotations", :force => true do |t|
+    t.string   "title"
     t.string   "name"
     t.text     "quote"
     t.integer  "position"

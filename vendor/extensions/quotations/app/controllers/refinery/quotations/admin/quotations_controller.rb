@@ -4,7 +4,6 @@ module Refinery
       class QuotationsController < ::Refinery::AdminController
 
         crudify :'refinery/quotations/quotation',
-                :title_attribute => 'name',
                 :xhr_paging => true
 
       end

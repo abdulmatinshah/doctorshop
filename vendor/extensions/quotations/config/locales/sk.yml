@@ -24,5 +24,6 @@ sk:
   activerecord:
     attributes:
       'refinery/quotations/quotation':
+        title: Title
         name: Name
         quote: Quote

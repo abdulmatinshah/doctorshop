@@ -12,8 +12,7 @@ module Refinery
           plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.quotations_admin_quotations_path }
           plugin.pathname = root
           plugin.activity = {
-            :class_name => :'refinery/quotations/quotation',
-            :title => 'name'
+            :class_name => :'refinery/quotations/quotation'
           }
           
         end
