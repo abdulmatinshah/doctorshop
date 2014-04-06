@@ -1,8 +1,10 @@
+
 <div class="wrapper">
+
 <% if @page.images.any? %>
 <div class="carousel-wrapper">
   <div class="carousel-2">
-  <div class="container">
+  <div class="container-fluid">
   <div class="row">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
@@ -15,12 +17,12 @@
   </ol>
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
-<% @page.images.each do |image| %>
-    <div class="item<%= ' active' if image.id==1 %>">
-      <img src="<%= image.thumbnail(geometry: "970x560").url %>">
+<% @page.image_pages.each do |ip| %>
+    <div class="item<%= ' active' if ip.image.id==1 %>">
+       <%= image_tag(ip.image.thumbnail(:geometry => "970x540").url, :title => ip.image.title)%>
        <div class="carousel-caption">
         <!-- <h2><%#= image.id %></h2> -->
-        
+        <%= raw ip.caption %> 
       </div>  <!-- carousel-caption -->
     </div> <!-- item active -->
 <% end %>
@@ -36,33 +38,37 @@
 </div> <!-- carousel-example-generic -->
 
   </div> <!-- row carosel -->
-</div> <!-- end container carousel -->
+</div> <!-- end container-fluid carousel -->
 </div> <!-- carousel wrapper -->
 </div>
 <% end %> <!-- end of @page.images.any?  -->
 <!-- END OF CAROUSEL -->
-<section>
-  <div class="container p-light-blue">
+
+        
+<section id="quotation-outer-wraper">
+  <div class="container-fluid">
     <div class="row">
       <div class="quotation-wraper custom-padding">
         <h2>Quotation of the Day</h2>
 
         <% @quotations.each do |q| %>
           <blockquote>
-        <dl>
-          <dt><%= q.title %></dt>
-          <dd><%= raw q.quote %></dd>
-        </dl>
-        <cite><small><%= q.name %></small></cite>
-      </blockquote>
+            <dl>
+              <dt><%= q.title %></dt>
+              <dd><%= raw q.quote %></dd>
+            </dl>
+            <cite><small><%= q.name %></small></cite>
+          </blockquote>
         <% end %>
-      </div>
-    </div>
-  </div>
+
+      </div> 
+    </div> <!-- row -->
+  </div><!-- container-fluid -->
+</section>
   <!-- END OF QUOTATION -->
 <section>
   <div class="ctas">
-    <div class="container p-light-blue">
+    <div class="container-fluid p-light-blue">
     <div class="row">
       <div class="cta col-sm-6">
         <div class="cta-inner">
@@ -110,52 +116,61 @@
         </div> <!-- cta-inner -->
       </div>
     </div> <!-- row -->
-    </div> <!-- end container -->
+    </div> <!-- end container-fluid-fluid -->
 </div>
   <!-- END OF CTA -->
   <article>
-    <div class="container p-light-blue">
-    <div class="row">
-            <div id="main" class="custom-padding">
-              <%=  raw @page.content_for(:body) %>
-            </div>
-    </div>
+    <div class="container-fluid p-light-blue">
+      <div class="row">
+        <div id="main" class="custom-padding">
+          <%#=  raw @page.content_for(:body) %>
+          <%= raw(content_fu(@page.content_for(:body), '96x96#c')) %>
+        </div>
+      </div>
     <!-- END OF BODY -->
-</article>
+    </div>
+  </article>
 
 
-  <div class="container p-black">
+  <div class="container-fluid p-black">
     <div class="row">
       <div class="blog-section">
       <div class="blog-left col-sm-3">
         <h2>About the Author</h2>
         <h3>Dr. Khurshid Anwar</h3>
-        <img src="http://placehold.it/150x150" class="img-circle img-responsive img-thumbnail">
+        
+        <%= image_tag '/assets/doctor.jpg', :size => '200x200', :class => "img-circle img-responsive img-thumbnail"%>
         <p>He is an MBBS doctor    having     vast     experience (>25 years) of   Community   Health, Surveillance    of     EPI  target   diseases    and     Family Health. He   also supervised     Malaria       control   programme  in  UNHCR funded project of  a  Refugee   Camp   in  Pakistan.  His   online activities include Bloging on Health related issues and   participation    in       'Yahoo   answars'.</p>
       </div> <!-- end author bio -->
       
       <div class="blog-right col-sm-9">
         <h2>Latest Articles from Your Doctor</h2>
 
-        <div class="blog-entry clearfix">
-          <a href="#"><h3>Blog title 1</h3></a>
-          <img src="http://placehold.it/100x100" class="img-circle img-responsive">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, voluptates eveniet ut nisi iusto. Alias, quos iure ut sunt inventore. Dolorum, incidunt, repellat, doloribus, aspernatur excepturi cupiditate molestiae labore cum iusto autem ab debitis nam <a href="#" class="btn btn-primary btn-xs pull-right">Read more &hellip;</a></p>
-        </div> <!-- end of except -->
+
+        <% @blog_posts.each do |post| %>
 
         <div class="blog-entry clearfix">
-           <a href="#"><h3>Blog title 2</h3></a>
-          <img src="http://placehold.it/100x100" class="img-circle img-responsive">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, voluptates eveniet ut nisi iusto. Alias, quos iure ut sunt inventore. Dolorum, incidunt, repellat, doloribus, aspernatur excepturi cupiditate molestiae labore cum iusto autem ab debitis nam . <a href="#" class="btn btn-primary btn-xs pull-right">Read more &hellip;</a></p>
+         
+
+          <a href="<%= blog_post_url(post) %>"><h3><%= post.title %></h3></a>
+          <% if post.images.any? %>
+            <%= link_to image_fu(post.images.first, '100x100#c', :class =>"img-circle img-responsive"), refinery.blog_post_path(post) %>
+          <% else %>
+            <%= link_to(image_tag('/assets/blog.jpeg', :size => '100x100', :class => "img-circle img-responsive"),refinery.blog_post_path(post))%>
+          <% end %>
+          <% if post.custom_teaser.present? %>
+              <%= raw post.custom_teaser %>
+          <% else %>
+              <%= raw truncate post.body, :length => 250, :omission => '...' %>  
+          <% end %>        
+                  <%= link_to('Read more', refinery.blog_post_path(post), :class => "btn btn-primary btn-xs pull-right") %>
+         <%#= post.image_pages.first.image.thumbnail(:geomatery => '100x100').url %>
+         
         </div> <!-- end of except -->
 
-        <div class="blog-entry clearfix">
-          <a href="#"><h3>Blog title 3</h3></a>
-          <img src="http://placehold.it/100x100" class="img-circle img-responsive">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, voluptates eveniet ut nisi iusto. Alias, quos iure ut sunt inventore. Dolorum, incidunt, repellat, doloribus, aspernatur excepturi cupiditate molestiae labore cum iusto autem ab debitis nam . <a href="#" class="btn btn-primary btn-xs pull-right">Read more &hellip;</a></p>
-        </div> <!-- end of except -->
+        <% end %>
 
-      </div> <!-- end author bio -->
+        </div> <!-- end author bio -->
       </div> <!-- end of blog-excerpts -->
     </div> <!-- end of row -->
   </div> <!-- end of cotainer -->
@@ -163,4 +178,6 @@
 <!-- END OF BLOG-EXCERPTS -->
 
 </section>
+
+   
 </div> <!-- wrapper -->

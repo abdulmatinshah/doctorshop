@@ -1,2 +1,1 @@
-$('#page').addClass('container p-light-blue')
-
+#$('#page').addClass('container p-light-blue')

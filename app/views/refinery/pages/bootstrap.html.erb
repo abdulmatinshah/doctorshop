@@ -2,7 +2,7 @@
 <% if @page.images.any? %>
 <div class="carousel-wrapper">
   <div class="carousel-2">
-  <div class="container">
+  <div class="container-fluid">
   <div class="row">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
@@ -36,13 +36,13 @@
 </div> <!-- carousel-example-generic -->
 
   </div> <!-- row carosel -->
-</div> <!-- end container carousel -->
+</div> <!-- end container-fluid carousel -->
 </div> <!-- carousel wrapper -->
 </div>
 <% end %> <!-- end of @page.images.any?  -->
 <!-- END OF CAROUSEL -->
 <section>
-  <div class="container p-light-blue">
+  <div class="container-fluid p-light-blue">
     <div class="row">
       <div class="quotation-wraper custom-padding">
         <h2>Quotation of the Day</h2>
@@ -61,7 +61,7 @@
   <!-- END OF QUOTATION -->
 <section>
   <div class="ctas">
-    <div class="container p-light-blue">
+    <div class="container-fluid p-light-blue">
     <div class="row">
       <div class="cta col-sm-6">
         <div class="cta-inner">
@@ -109,11 +109,11 @@
         </div> <!-- cta-inner -->
       </div>
     </div> <!-- row -->
-    </div> <!-- end container -->
+    </div> <!-- end container-fluid -->
 </div>
   <!-- END OF CTA -->
   <article>
-    <div class="container p-light-blue">
+    <div class="container-fluid p-light-blue">
     <div class="row">
             <div id="main" class="custom-padding">
               <%=  raw @page.content_for(:body) %>
@@ -123,7 +123,7 @@
 </article>
 
 
-  <div class="container p-black">
+  <div class="container-fluid p-black">
     <div class="row">
       <div class="blog-section">
       <div class="blog-left col-sm-3">

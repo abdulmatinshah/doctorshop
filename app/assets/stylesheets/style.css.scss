@@ -119,9 +119,16 @@ nav ul ul {
   background: transparent url('hanging-flap.png') repeat-x;
   height: 207px;
   position: relative;
+  #top-head {
+    margin-top:3em;
+  }
 }
 .header-wrapper .menu {
+  float: left;
+}
+.header-wrapper form {
   float: right;
+  margin-top: 1em;
 }
 .custom-padding {
   padding: 0 17px;
@@ -132,7 +139,7 @@ section#logo {
     &:hover {
       text-decoration: none;
       text-shadow: 0 0 3px #fff;
-      transition: text-shadow .6s;
+      transition: text-shadow .1s;
     }
   }
   h1.display-logo {
@@ -143,44 +150,37 @@ section#logo {
   background-color: black;
   box-shadow: -1px -1px 2px #fff;
   position: relative;
-  z-index: 10;
+  z-index: 1;
   
   a {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    text-indent: -9999px;
-    background: url('logo.png') top center no-repeat;
-    background-size: cover;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      text-indent: -9999px;
+      background: url('logo.png') top center no-repeat;
+      background-size: cover;
+    }
   }
-
-}
-h2#slogan {
-    font-family: 'Source Sans Pro';
-    font-weight: 900;
-    color: #eee;
-    text-shadow: 1px 1px 3px #000;
+  h2#slogan {
     position: absolute;
-    width: 90%;
-    top: 8em;
-    z-index: 11;
-   
-    span {
-      text-align: center;
-      &.left {
-      display: block;
-      float: left;
-    }
-    &.right {
-      display: block;
-      float: right;
-    }
-    }
+    top: 0;
+    z-index: 9;
+    color: #fff;
+    background-color: lighten($myColor, 10%);
+    text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
+    font: 2em  'Source Sans Pro';
+    font-weight: bold;
+    text-align: center;
+    /*@include border-radius(4px);*/
+    box-shadow: 0 2px 2px #ccc;
+    width: 100%;
+    margin: 1px;
   }
 }
-/* #body_content_title {
-  margin: 0 17px;
- }*/
+#page > .container-fluid{
+  min-height: 500px;
+}
+
 #page, #contact-page {
   margin-top: -.5em;
 }
@@ -195,14 +195,16 @@ h2#slogan {
 
 .p-light-blue {
   background: transparent url(pattern-light-blue.jpg);
+  /*background: #dbebff;*/
+  /*background: rgba(250, 250, 250, .6);*/
 }
 .p-green {
-  background: transparent url(pattern-light-blue.jpg);
+  /*background: transparent url(pattern-light-blue.jpg);*/
 }
 .p-black {
   background: transparent url(pattern.png);
   /*color: rgba(250, 250, 250, .3);*/
-  color: #ccc;
+  color: #eee;
 }
 
 /*FORM*/
@@ -242,10 +244,13 @@ form {
  }
  .blog-section {
   border-top: 1px solid #222;
-  border-bottom: 1px solid #eee;
+  /*border-bottom: 1px solid #eee;*/
  }
 .blog-left {
-
+  text-shadow: 1px 1px 1px #000;
+  h3 {
+    color: $myColor;
+  }
 }
 .blog-right {
   background-color: rgba(0, 0, 0, .1);
@@ -253,33 +258,37 @@ form {
   h2 {
     color: $myColor;
     text-shadow: 1px 1px 1px #000;
+    text-decoration: 1px solid white;
   }
-  .blog-entry {
+ .blog-entry {
     background-color: rgba(0, 0, 0, .15);
     box-shadow: 1px 1px 1px rgba(250, 250, 250, .3);
     border-top: 1px solid black;
     border-left: 1px solid black;
     border-radius: 5px;
-    padding: 10px 10px 10px 130px;
+    padding: 10px 10px 10px 10px;
     position: relative;
     margin-bottom: 1em;
-    h3 {
+    min-height: 160px;
+    a > h3 {
       color: $myColor;
       text-shadow: 1px 1px 1px #000;
+      transition: color .1s;
+      &:hover {
+        color: #eee;
+        text-decoration: 1px solid #ccc;
+        transition: color .1s;
+      }
       a:hover {
         color: lighten($myColor, 30%);
         text-decoration: dotted;
       } 
     }
     img {
-      position: absolute;
-      top: 2.5em;
-      left: 10px;
       border: 3px solid $myColor;
       box-shadow: 0 0 5px #000;
-    }
-    
-  }
+    }  
+  } 
 }
  #main img {
   @extend .img-thumbnail;
@@ -296,12 +305,34 @@ blockquote>dl>dd>p>a {
     padding: 5px;
     min-width: 40em;
  }
- /*blockquote*/
- blockquote {
-  a {
-    
+ 
+section#quotation-outer-wraper > .container-fluid > .row {
+  background-color: lighten($myColor, 15%);
+  .quotation-wraper {
+    h2 {
+    color: #555;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, .9), 0 0 1px rgba(250, 250, 250, .7);
+    }
+    blockquote cite {
+      font-size: 1.5em;
+      text-shadow: -1px -1px 1px #000;
+    }
   }
- }
+}
+#main table {
+  width: 95%;
+  box-shadow: 1px 1px 1px #222;
+  tr td {border: 1px solid #bbb;}
+  tbody tr:first-child {
+    background-color: rgba(0, 0, 0, .7);
+    color: $myColor; font-weight: bold;
+    text-shadow: 1px 1px 1px rbga(250, 250, 250, .5);
+  }
+  tr:nth-child(odd) {background-color: rgba(250, 250, 250, .3);}
+  tr:nth-child(even) {background-color: $lightGrey;}
+  tr td { padding: 3px;}
+
+}
 /* ===================================
       UTILITIES
 ===================================   */
@@ -320,15 +351,74 @@ blockquote>dl>dd>p>a {
 /* ===================================
       hacks
 ===================================   */
-#page.container {
+#page.container-fluid {
   padding-left: 0;
   /*margin-top: 6em;*/
 }
 #body_content {
-  margin-left: 0px;
+  /*margin-left: 0px;*/
 }
-#about-page #page.container,
-#contact-page #page.container,
-#articles-page #page.container {
-  padding: 0 17px;
+#resmenu1 {
+  margin: 1em 0;
 }
+#about-page #page.container-fluid,
+#contact-page #page.container-fluid,
+#articles-page #page.container-fluid {
+  /*padding: 0 17px;*/
+}
+article .container-fluid .row #main, 
+section#page .container-fluid,
+section#page #body_content {
+  background-color: #fff;
+  overflow: hidden;
+}
+
+#body_content_title {
+  padding-left: 17px;
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) { /* ------------------- */
+  .header-wrapper #top-head {
+    margin-top:5em;
+  }
+  section#logo h2#slogan {
+    font-size: 4.2em;
+    
+  }
+  .blog-entry {    
+    padding-left: 130px !important;
+    }
+    .blog-right {
+      img {
+      position: absolute;
+      top: 2.5em;
+      left: 10px;
+    }
+
+    }
+
+
+} /* ------- end of @media (min-width: $screen-sm-min) --------*/
+
+
+ 
+/* ----------Medium devices (desktops, 992px and up) -----------*/
+@media (min-width: $screen-md-min) { /* ==============+++========= */
+   .header-wrapper #top-head {
+    margin-top:6.5em;
+  }
+
+  section#logo h2#slogan {
+    font-size: 5.5em;
+    
+  }
+} /* ===========   @media (min-width: $screen-md-min) ============ */
+
+
+
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) { /*...........................*/
+
+} /*..............    @media (min-width: $screen-lg-min)     .............*/
+

@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20140323160649) do
 
-  create_table "_refinery_quotations_old_20140323", :force => true do |t|
-    t.string   "name"
-    t.text     "quotation"
-    t.integer  "position"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "refinery_blog_categories", :force => true do |t|
     t.string   "title"
     t.datetime "created_at", :null => false
@@ -208,14 +200,6 @@ ActiveRecord::Schema.define(:version => 20140323160649) do
 
   create_table "refinery_quotations", :force => true do |t|
     t.string   "title"
-    t.string   "name"
-    t.text     "quote"
-    t.integer  "position"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "refinery_quotationss", :force => true do |t|
     t.string   "name"
     t.text     "quote"
     t.integer  "position"
