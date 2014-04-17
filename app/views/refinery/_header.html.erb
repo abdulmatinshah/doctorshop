@@ -1,5 +1,5 @@
-<div class="header-wrapper">
-<div class="container-fluid">
+<div class="header-wrapper container">
+
   <div id="top-head" class="row">
 
     <%= Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self).to_html %>
@@ -10,12 +10,12 @@
         <%= submit_tag 'Find', class: 'btn btn-default btn-primary' %>
       <% end %>
 
-  <section id='logo'>
-    <h1<%= " class=display-logo" if @page.id==1 %>>
-      <%= link_to Refinery::Core.site_name, refinery.root_path %>
-    </h1>
-    <h2 id="slogan">Be Happy Live Long...</h2>
-  </section>
+      <section id='logo'>
+        <h1<%= " class=display-logo" if @page.id==1 %>>
+          <%= link_to Refinery::Core.site_name, refinery.root_path %>
+        </h1>
+        
+      </section>
    </div>  <!--row --> 
-</div> <!--container-fluid -->
+    <h2 id="slogan">Be Happy Live Long...</h2>
 </div> <!-- header-wrapper -->

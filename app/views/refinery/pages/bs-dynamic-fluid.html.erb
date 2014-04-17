@@ -4,7 +4,7 @@
 <% if @page.images.any? %>
 <div class="carousel-wrapper">
   <div class="carousel-2">
-  <div class="container">
+  
   <div class="row">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
@@ -19,7 +19,7 @@
   <div class="carousel-inner">
 <% @page.image_pages.each do |ip| %>
     <div class="item<%= ' active' if ip.image.id==1 %>">
-       <%= image_tag(ip.image.thumbnail(:geometry => "970x540").url, :title => ip.image.title)%>
+       <%= image_tag(ip.image.thumbnail(:geometry => "970x540#c").url, :title => ip.image.title)%>
        <div class="carousel-caption">
         <!-- <h2><%#= image.id %></h2> -->
         <%= raw ip.caption %> 
@@ -38,7 +38,7 @@
 </div> <!-- carousel-example-generic -->
 
   </div> <!-- row carosel -->
-</div> <!-- end container carousel -->
+
 </div> <!-- carousel wrapper -->
 </div>
 <% end %> <!-- end of @page.images.any?  -->
@@ -46,7 +46,7 @@
 
         
 <section id="quotation-outer-wraper">
-  <div class="container">
+  
     <div class="row">
       <div class="quotation-wraper custom-padding">
         <h2>Quotation of the Day</h2>
@@ -63,73 +63,65 @@
 
       </div> 
     </div> <!-- row -->
-  </div><!-- container -->
+  
 </section>
   <!-- END OF QUOTATION -->
-
 <section>
-  <div class="container p-light-blue">
+  <div class="ctas">
     <div class="p-light-blue">
-      <div class="row ctas">
-        <div class="row">
-          <div class="cta col-sm-6">
-            <div class="cta-inner">
-              <h2>Books</h2>
-              <ul>
-                <li>Weight Control</li>
-                <li>Beauty &amp; Skin Care</li>
-                <li>Nutrition</li>
-                <li>Exercise</li>
-                <a href="#" class="btn btn-primary btn-xs">Read more &hellip;</a>
-              </ul>
-            </div> <!-- cta-inner -->
-          </div> <!-- cta col-sm-6 -->
-          
-          <div class="cta col-sm-6">
-             <div class="cta-inner">
-              <h2>Equipment</h2>
-              <ul>
-                <li>Body Measurement Products</li>
-                <li>Massage Devices</li>
-                <li>Exercise Machines</li>
-                <a href="#" class="btn btn-primary btn-xs">Read more &hellip;</a>
-              </ul>
-            </div> <!-- cta-inner -->
-          </div> <!-- cta col-sm-6 -->
-          </div> <!-- End of 1st row of two col-sm-6 -->
-          <div class="row">
-          <div class="cta col-sm-6">
-             <div class="cta-inner">
-              <h2>Vitamins</h2>
-              <ul>
-                <li>Multivitamins &amp; Minerals</li>
-                <li>Nerve Tonics</li>
-                <li>Digestive Tonics</li>
-                <a href="#" class="btn btn-primary btn-xs">Read more &hellip;</a>
-              </ul>
-            </div> <!-- cta-inner -->
-          </div> <!-- cta col-sm-6 -->
-
-          <div class="cta col-sm-6">
-             <div class="cta-inner">
-              <h2>Food</h2>
-              <ul>
-                <li>Weight Loss</li>
-                <li>Body Building</li>
-                <li>Power Tonics</li>
-               <a href="#" class="btn btn-primary btn-xs">Read more &hellip;</a>
-              </ul>
-            </div> <!-- cta-inner -->
-          </div> <!-- cta col-sm-6 -->
+    <div class="row">
+      <div class="cta col-sm-6">
+        <div class="cta-inner">
+          <h2>Books</h2>
+          <ul>
+            <li>Weight Control</li>
+            <li>Beauty &amp; Skin Care</li>
+            <li>Nutrition</li>
+            <li>Exercise</li>
+            <a href="#" class="btn btn-primary btn-xs">Read more &hellip;</a>
+          </ul>
+      </div> <!-- cta-inner -->
+        </div>
+      <div class="cta col-sm-6">
+         <div class="cta-inner">
+          <h2>Equipment</h2>
+          <ul>
+            <li>Body Measurement Products</li>
+            <li>Massage Devices</li>
+            <li>Exercise Machines</li>
+            <a href="#" class="btn btn-primary btn-xs">Read more &hellip;</a>
+          </ul>
+        </div> <!-- cta-inner -->
+      </div>
+    
+      <div class="cta col-sm-6">
+         <div class="cta-inner">
+          <h2>Vitamins</h2>
+          <ul>
+            <li>Multivitamins+Minerals</li>
+            <li>Nerve Tonics</li>
+            <li>Digestive Tonics</li>
+            <a href="#" class="btn btn-primary btn-xs">Read more &hellip;</a>
+          </ul>
+        </div> <!-- cta-inner -->
+      </div>
+      <div class="cta col-sm-6">
+         <div class="cta-inner">
+          <h2>Food</h2>
+          <ul>
+            <li>Weight Loss</li>
+            <li>Body Building</li>
+            <li>Power Tonics</li>
+           <a href="#" class="btn btn-primary btn-xs">Read more &hellip;</a>
+          </ul>
+        </div> <!-- cta-inner -->
+      </div>
     </div> <!-- row -->
-  </div> <!-- ctas -->
-</div> <!-- p-light-blue -->
-</div> <!-- end container -->
-
- 
+    </div> <!-- end container-fluid-fluid -->
+</div>
   <!-- END OF CTA -->
   <article>
-    <div class="container p-light-blue">
+    
       <div class="row">
         <div id="main" class="custom-padding">
           <%#=  raw @page.content_for(:body) %>
@@ -137,14 +129,14 @@
         </div>
       </div>
     <!-- END OF BODY -->
-    </div>
+   
   </article>
 
 
-  <div class="container p-black">
+  <div class="p-black">
     <div class="row">
       <div class="blog-section">
-      <div class="blog-left col-sm-3">
+      <div class="blog-left col-sm-4">
         <h2>About the Author</h2>
         <h3>Dr. Khurshid Anwar</h3>
         
@@ -152,7 +144,7 @@
         <p>He is an MBBS doctor    having     vast     experience (>25 years) of   Community   Health, Surveillance    of     EPI  target   diseases    and     Family Health. He   also supervised     Malaria       control   programme  in  UNHCR funded project of  a  Refugee   Camp   in  Pakistan.  His   online activities include Bloging on Health related issues and   participation    in       'Yahoo   answars'.</p>
       </div> <!-- end author bio -->
       
-      <div class="blog-right col-sm-9">
+      <div class="blog-right col-sm-8">
         <h2>Latest Articles from Your Doctor</h2>
 
 
@@ -165,7 +157,7 @@
           <% if post.images.any? %>
             <%= link_to image_fu(post.images.first, '100x100#c', :class =>"img-circle img-responsive"), refinery.blog_post_path(post) %>
           <% else %>
-            <%= link_to(image_tag('/assets/placeholder.jpg', :size => '100x100', :class => "img-circle img-responsive"),refinery.blog_post_path(post))%>
+            <%= link_to(image_tag('/assets/blog.jpeg', :size => '100x100', :class => "img-circle img-responsive"),refinery.blog_post_path(post))%>
           <% end %>
           <% if post.custom_teaser.present? %>
               <%= raw post.custom_teaser %>
@@ -188,5 +180,5 @@
 
 </section>
 
-   
+   <%= render 'refinery/shared/social_icon' %>
 </div> <!-- wrapper -->

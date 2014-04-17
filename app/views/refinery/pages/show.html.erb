@@ -1,13 +1,15 @@
-<div class="container-fluid">
-  <h1><%= @page.title %></h1>
+<div class="container">
   <div class="row">
-<div class="col-sm-8">
-  <%= raw @page.content_for(:body) %>
-    <%= render :partial => '/refinery/shared/lightbox', :locals => {:object => @page} %>
-</div> <!-- end col-sm-8 -->
+     <div class="col-sm-8"><h1><%= @page.title %></h1></div>
+  </div>
+<div class="row">
+  <div class="col-sm-8">
+    <%= raw @page.content_for(:body) %>
+      <%= render :partial => '/refinery/shared/lightbox', :locals => {:object => @page} %>
+  </div> <!-- end col-sm-8 -->
 
-  <div class="col-sm-4">
-    <%= raw @page.content_for(:side_body) %>
-  </div> <!-- end col-sm-4 -->
-</div> <!-- end of row -->
-</div> <!-- end of container-fluid -->
+    <div class="col-sm-4">
+      <%= raw @page.content_for(:side_body) %>
+    </div> <!-- end col-sm-4 -->
+  </div> <!-- end of row -->
+</div> <!-- end of container -->

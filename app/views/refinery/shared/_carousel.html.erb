@@ -1,0 +1,43 @@
+<% if object.images.any? %>
+<div class="carousel-wrapper">
+  <div class="carousel-2">
+  <div class="container">
+  <div class="row">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <% i=0 %>
+    <% while i < object.images.size do %>
+    <li data-target="#carousel-example-generic" data-slide-to="<%= i %>" class=<%= "active" if i==0 %>></li>
+    <% i+=1 %>
+    <% end %>
+  </ol>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+<% object.image_pages.each do |ip| %>
+    <div class="item<%= ' active' if ip.image.id==object.images.first.id  %>">
+       <%= image_tag(ip.image.thumbnail(:geometry => "970x540!").url, :title => ip.image.title)%>
+       <div class="carousel-caption">
+        <!-- <h2><%#= image.id %></h2> -->
+        <%= raw ip.caption %> 
+      </div>  <!-- carousel-caption -->
+    </div> <!-- item active -->
+<% end %>
+</div> <!-- carousel-inner -->
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div> <!-- carousel-example-generic -->
+
+  </div> <!-- row carosel -->
+</div> <!-- end container carousel -->
+</div> <!-- carousel wrapper -->
+</div>
+<% end %> <!-- end of @page.images.any?  -->
+<!-- END OF CAROUSEL -->
+

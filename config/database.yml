@@ -18,6 +18,13 @@
 #   pool: 5
 #   timeout: 5000
 
+##########  LOCAL MACHINE #####################
+# development:
+#   adapter: sqlite3
+#   database: db/development.sqlite3
+#   pool: 5
+#   timeout: 5000
+
 development:
   adapter: postgresql
   encoding: unicode
@@ -41,3 +48,28 @@ production:
   pool: 5
   username: davian
   password: 
+
+#################### Production -> railsplayground  server #######################
+# development:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: doctorsh_development
+#   pool: 5
+#   username: doctorsh_doctorsh
+#   password: Novidat500
+
+# test:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: doctorsh_test
+#   pool: 5
+#   username: doctorsh_doctorsh
+#   password: Novidat500
+
+# production:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: doctorsh_production
+#   pool: 5
+#   username: doctorsh_doctorsh
+#   password: Novidat500
