@@ -5,6 +5,7 @@
 <%= raw %(<link rel="canonical" content="#{@canonical}" />) if @canonical.present? -%>
 <%= csrf_meta_tags if Refinery::Core.authenticity_token_on_frontend -%>
 <%= yield :meta %>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
 <%= stylesheet_link_tag "application" %>
 <%= yield :stylesheets %>

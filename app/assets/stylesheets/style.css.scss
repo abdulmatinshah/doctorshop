@@ -319,12 +319,15 @@ blockquote>dl>dd>p>a {
   @extend .btn-primary;
   @extend .btn-xs;
 }
- form label {
+ form {
+  clear: right;
+  form label {
   display: block;
- }
- form input[type=text], form input[type=email], form textarea {
-    padding: 5px;
-    min-width: 40em;
+  }
+  form input[type=text], form input[type=email], form textarea {
+      padding: 5px;
+      min-width: 40em;
+   }
  }
  
 section#quotation-outer-wraper > .container > .row {
@@ -431,12 +434,23 @@ section#page #body_content {
 .social-list {
   list-style: none;
   padding-left: 0;
+  li {
+   float: right;
+   margin-right: -.5em;
+    &:first-child {
+      margin-right: 0px;
+    }
+    a {
+      transition: color .5s;
+      &:hover {
+        color: darken($myColor, 40%);
+        transition: color .5s;
+      }
+    }
+  }
 }
 
-.social-list li {
-  float: left;
-  margin-right: 10px;
-}
+
 
 } /* ------- end of @media (min-width: $screen-sm-min) --------*/
 
