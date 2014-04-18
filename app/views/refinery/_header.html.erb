@@ -3,6 +3,7 @@
   <div id="top-head" class="row">
 
     <%= Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self).to_html %>
+      <%= render partial: 'refinery/shared/social_icons' %>
       <%= form_tag refinery.search_path do -%>
         <%= text_field_tag :query, {}, {:type => "search",
                            :placeholder => "Search site for...", 
@@ -18,4 +19,5 @@
       </section>
    </div>  <!--row --> 
     <h2 id="slogan">Be Happy Live Long...</h2>
+
 </div> <!-- header-wrapper -->

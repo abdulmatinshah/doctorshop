@@ -1,7 +1,9 @@
 <div class="row">
-<div class="col-sm-4">
+
   <% object.image_pages.each do |ip|%>
+ <div class="col-sm-4">
 <%= link_to(image_tag(ip.image.thumbnail(:geometry => "200x200#c").url, :title => ip.image.title, :class => "img-thumbnail"), ip.image.url, "data-lightbox" => "group-set", "data-title"=> ip.caption) %>
-<% end %>
 </div>
+<% end %> <!-- end of col-sm-4 -->
+
 </div>

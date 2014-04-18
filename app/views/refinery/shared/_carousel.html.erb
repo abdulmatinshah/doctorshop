@@ -16,7 +16,7 @@
   <div class="carousel-inner">
 <% object.image_pages.each do |ip| %>
     <div class="item<%= ' active' if ip.image.id==object.images.first.id  %>">
-       <%= image_tag(ip.image.thumbnail(:geometry => "970x540!").url, :title => ip.image.title)%>
+       <%= image_tag(ip.image.thumbnail(:geometry => "970x460!").url, :title => ip.image.title)%>
        <div class="carousel-caption">
         <!-- <h2><%#= image.id %></h2> -->
         <%= raw ip.caption %> 

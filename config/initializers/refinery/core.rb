@@ -21,7 +21,7 @@ Refinery::Core.configure do |config|
 
   # Site name
   # config.site_name = "Company Name"
-  config.site_name = "Doctor Shop"
+  config.site_name = "DoctorShop"
 
   # This activates Google Analytics tracking within your website. If this
   # config is left blank or set to UA-xxxxxx-x then no remote calls to

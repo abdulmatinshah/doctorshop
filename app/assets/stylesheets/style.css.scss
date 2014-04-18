@@ -74,7 +74,15 @@ nav ul ul {
     }
     nav ul li {
     float: left;
-}
+    &.selected {
+        background-color: #fff;
+        a {
+          font-weight: bold;
+          color: #000;
+        }
+      }
+    }
+    
     nav ul li:hover {
         background: #4b545f;
         background: linear-gradient(top, #4f5964 0%, #5f6975 40%);
@@ -143,9 +151,9 @@ section#logo {
     }
   }
   h1.display-logo {
-  margin: 1em auto;
-  max-width: 278px;
-  height: 281px;
+  margin: 1.5em auto;
+  max-width: 160px;
+  height: 160px;
   border-radius: 800px;
   box-shadow: -1px -1px 2px #fff;
   position: relative;
@@ -420,7 +428,15 @@ section#page #body_content {
     }
 
     }
+.social-list {
+  list-style: none;
+  padding-left: 0;
+}
 
+.social-list li {
+  float: left;
+  margin-right: 10px;
+}
 
 } /* ------- end of @media (min-width: $screen-sm-min) --------*/
 
