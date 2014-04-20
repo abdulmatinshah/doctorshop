@@ -248,7 +248,7 @@ form {
   margin: 0 auto;
   color: #222;
   height: auto;
-  text-shadow: -1px -1px 0 #6b6f91;
+  text-shadow: -1px -1px 1px #6b6f91;
   padding: 5em;
   text-align: center;
   ul {
@@ -343,7 +343,34 @@ section#quotation-outer-wraper > .container > .row {
     }
   }
 }
-#main table {
+
+table {
+  box-shadow: 0 0 1px #aaa;
+  margin-bottom: 1.5em;
+  caption {
+    font-weight: bold;
+    background-color: lighten($myColor, 30%);
+    border: 1px solid $myColor;
+    box-shadow: 0 0 1px #aaa;
+  }
+  border-collapse:collapse;
+  td{ 
+    padding:7px; border:$myColor 1px solid;
+  }
+  tr{
+    &:first-child{
+      font-weight: bold;
+    }
+    &:nth-child(odd){ 
+      background: $myWhite;
+    }
+    &:nth-child(even){
+      background: lighten($myColor, 50%);
+    }
+  }
+  
+}
+/*#main table {
   width: 95%;
   box-shadow: 1px 1px 1px #222;
   tr td {border: 1px solid #bbb;}
@@ -356,7 +383,7 @@ section#quotation-outer-wraper > .container > .row {
   tr:nth-child(even) {background-color: $lightGrey;}
   tr td { padding: 3px;}
 
-}
+}*/
 /* ===================================
       UTILITIES
 ===================================   */
@@ -383,21 +410,14 @@ section#quotation-outer-wraper > .container > .row {
   /*padding-left: 0;*/
   /*margin-top: 6em;*/
 }
-#body_content {
-  /*margin-left: 0px;*/
-  
-}
+
 section#body {
   padding: 2em 0;
 }
 #resmenu1 {
   margin: 1em 0;
 }
-#about-page #page.container,
-#contact-page #page.container,
-#articles-page #page.container {
-  /*padding: 0 17px;*/
-}
+
 article .container .row #main, 
 section#page .container,
 section#page #body_content {
@@ -405,13 +425,21 @@ section#page #body_content {
   overflow: hidden;
 }
 
-#body_content_title {
-  /*padding-left: 17px;*/
-}
 .blog_author {
   text-transform:capitalize;
   font-weight: bold;
 }
+form#new_inquiry, aside#comments form {
+  label {
+    display: block;
+  }
+  input[type=text], input[type=email], textarea {
+    min-width: 60%;
+    margin-bottom: 1em;
+  }
+   
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm-min) { /* ------------------- */
   .header-wrapper #top-head {
